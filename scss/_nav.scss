@@ -4,7 +4,7 @@
 // `<nav>`s or `<ul>`s.
 
 .nav {
-  padding-left: 0;
+  padding-#{$align}: 0;
   margin-bottom: 0;
   list-style: none;
 }
@@ -33,7 +33,7 @@
 
 .nav-inline {
   .nav-link + .nav-link {
-    margin-left: 1rem;
+    margin-#{$align}: 1rem;
   }
 }
 
@@ -47,12 +47,12 @@
   @include clearfix();
 
   .nav-item {
-    float: left;
+    float: #{$align};
     // Make the list-items overlay the bottom border
     margin-bottom: -1px;
 
     + .nav-item {
-      margin-left: .2rem;
+      margin-#{$align}: .2rem;
     }
   }
 
@@ -92,10 +92,10 @@
 
 .nav-pills {
   .nav-item {
-    float: left;
+    float: #{$align};
 
     + .nav-item {
-      margin-left: .2rem;
+      margin-#{$align}: .2rem;
     }
   }
 
@@ -122,7 +122,7 @@
 
     + .nav-item {
       margin-top: .2rem;
-      margin-left: 0;
+      margin-#{$align}: 0;
     }
   }
 }

@@ -10,12 +10,12 @@
     display: inline-block;
     width: 0;
     height: 0;
-    margin-left: .25rem;
+    margin-#{$align}: .25rem;
     vertical-align: middle;
     content: "";
     border-top: $caret-width solid;
-    border-right: $caret-width solid transparent;
-    border-left: $caret-width solid transparent;
+    border-#{$align-inverse}: $caret-width solid transparent;
+    border-#{$align}: $caret-width solid transparent;
   }
 
   // Prevent the focus on the dropdown toggle when closing dropdowns
@@ -28,15 +28,15 @@
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  #{$align}: 0;
   z-index: $zindex-dropdown;
   display: none; // none by default, but block on "open" of the menu
-  float: left;
+  float: #{$align};
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0; // override default ul
   font-size: $font-size-base;
-  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  text-align: #{$align}; // Ensures proper alignment if parent has it changed (e.g., modal footer)
   list-style: none;
   background-color: $dropdown-bg;
   background-clip: padding-box;
@@ -118,19 +118,19 @@
 //
 // Add extra class to `.dropdown-menu` to flip the alignment of the dropdown
 // menu with the parent.
-.dropdown-menu-right {
-  right: 0;
-  left: auto; // Reset the default from `.dropdown-menu`
+.dropdown-menu-#{$align-inverse} {
+  #{$align-inverse}: 0;
+  #{$align}: auto; // Reset the default from `.dropdown-menu`
 }
-// With v3, we enabled auto-flipping if you have a dropdown within a right
+// With v3, we enabled auto-flipping if you have a dropdown within a #{$align-inverse}
 // aligned nav component. To enable the undoing of that, we provide an override
 // to restore the default dropdown menu alignment.
 //
-// This is only for left-aligning a dropdown menu within a `.navbar-right` or
-// `.pull-right` nav component.
-.dropdown-menu-left {
-  right: auto;
-  left: 0;
+// This is only for #{$align}-aligning a dropdown menu within a `.navbar-#{$align-inverse}` or
+// `.pull-#{$align-inverse}` nav component.
+.dropdown-menu-#{$align} {
+  #{$align-inverse}: auto;
+  #{$align}: 0;
 }
 
 // Dropdown section headers
@@ -147,16 +147,16 @@
 .dropdown-backdrop {
   position: fixed;
   top: 0;
-  right: 0;
+  #{$align-inverse}: 0;
   bottom: 0;
-  left: 0;
+  #{$align}: 0;
   z-index: ($zindex-dropdown - 10);
 }
 
-// Right aligned dropdowns
-.pull-right > .dropdown-menu {
-  right: 0;
-  left: auto;
+// #{$align-inverse} aligned dropdowns
+.pull-#{$align-inverse} > .dropdown-menu {
+  #{$align-inverse}: 0;
+  #{$align}: auto;
 }
 
 // Allow for dropdowns to go bottom up (aka, dropup-menu)

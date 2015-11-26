@@ -16,7 +16,7 @@
 }
 
 .jumbotron-fluid {
-  padding-right: 0;
-  padding-left: 0;
+  padding-#{$align-inverse}: 0;
+  padding-#{$align}: 0;
   @include border-radius(0);
 }

@@ -14,7 +14,7 @@ linters:
 
   Comment:
     enabled: true
-    exclude: ['_normalize.scss', 'bootstrap.scss']
+    exclude: ['_normalize.scss', 'bootstrap.scss','bootstrap-RTL.scss']
 
   DebugStatement:
     enabled: true

@@ -1,5 +1,5 @@
 // Embedded icons from Open Iconic.
-// Released under MIT and copyright 2014 Waybury.
+// Released under MIT and copy#{$align-inverse} 2014 Waybury.
 // http://useiconic.com/open
 
 
@@ -10,7 +10,7 @@
 .c-input {
   position: relative;
   display: inline;
-  padding-left: 1.5rem;
+  padding-#{$align}: 1.5rem;
   color: #555;
   cursor: pointer;
 
@@ -37,7 +37,7 @@
   }
 
   + .c-input {
-    margin-left: 1rem;
+    margin-#{$align}: 1rem;
   }
 }
 
@@ -48,7 +48,7 @@
 .c-indicator {
   position: absolute;
   top: 0;
-  left: 0;
+  #{$align}: 0;
   display: block;
   width: 1rem;
   height: 1rem;
@@ -115,7 +115,7 @@
     }
 
     + .c-input {
-      margin-left: 0;
+      margin-#{$align}: 0;
     }
   }
 }
@@ -131,7 +131,7 @@
   max-width: 100%;
   padding: .375rem 1.75rem .375rem .75rem;
   vertical-align: middle;
-	background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC) no-repeat right .75rem center;
+	background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC) no-repeat #{$align-inverse} .75rem center;
   background-size: 8px 10px;
   border: 1px solid $input-border;
 
@@ -141,7 +141,7 @@
   appearance: none;
 
   // IE9 hacks to hide the background-image and reduce padding
-  padding-right: .75rem \9;
+  padding-#{$align-inverse}: .75rem \9;
   background-image: none \9;
 
   &:focus {
@@ -187,8 +187,8 @@
 .file-custom {
   position: absolute;
   top: 0;
-  right: 0;
-  left: 0;
+  #{$align-inverse}: 0;
+  #{$align}: 0;
   z-index: 5;
   height: 2.5rem;
   padding: .5rem 1rem;
@@ -206,7 +206,7 @@
 .file-custom:before {
   position: absolute;
   top: -.075rem;
-  right: -.075rem;
+  #{$align-inverse}: -.075rem;
   bottom: -.075rem;
   z-index: 6;
   display: block;

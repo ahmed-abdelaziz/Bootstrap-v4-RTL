@@ -33,16 +33,16 @@
 
 // Dismissible alerts
 //
-// Expand the right padding and account for the close button's positioning.
+// Expand the #{$align-inverse} padding and account for the close button's positioning.
 
 .alert-dismissible {
-  padding-right: ($alert-padding + 20);
+  padding-#{$align-inverse}: ($alert-padding + 20);
 
   // Adjust close link position
   .close {
     position: relative;
     top: -2px;
-    right: -21px;
+    #{$align-inverse}: -21px;
     color: inherit;
   }
 }

@@ -22,8 +22,8 @@
   .media-body {
     width: 10000px;
   }
-  .media-left,
-  .media-right,
+  .media-#{$align},
+  .media-#{$align-inverse},
   .media-body {
     display: table-cell;
     vertical-align: top;
@@ -55,12 +55,12 @@
 // Alignment
 //
 
-.media-right {
-  padding-left: 10px;
+.media-#{$align-inverse} {
+  padding-#{$align}: 10px;
 }
 
-.media-left {
-  padding-right: 10px;
+.media-#{$align} {
+  padding-#{$align-inverse}: 10px;
 }
 
 
@@ -79,6 +79,6 @@
 //
 
 .media-list {
-  padding-left: 0;
+  padding-#{$align}: 0;
   list-style: none;
 }

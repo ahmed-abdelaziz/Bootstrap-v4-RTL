@@ -27,7 +27,7 @@ $grid-breakpoints: (
 // Number of columns in the grid.
 $grid-columns:               12 !default;
 
-// Padding between columns. Gets divided in half for the left and right.
+// Padding between columns. Gets divided in half for the #{$align} and #{$align-inverse}.
 $grid-gutter-width:          1.5rem !default;
 
 

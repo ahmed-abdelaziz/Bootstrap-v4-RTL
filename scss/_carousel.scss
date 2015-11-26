@@ -11,7 +11,7 @@
   > .carousel-item {
     position: relative;
     display: none;
-    transition: .6s ease-in-out left;
+    transition: .6s ease-in-out #{$align};
 
     // Account for jankitude on images
     > img,
@@ -27,19 +27,19 @@
       perspective: 1000px;
 
       &.next,
-      &.active.right {
-        left: 0;
+      &.active.#{$align-inverse} {
+        #{$align}: 0;
         transform: translate3d(100%, 0, 0);
       }
       &.prev,
-      &.active.left {
-        left: 0;
+      &.active.#{$align} {
+        #{$align}: 0;
         transform: translate3d(-100%, 0, 0);
       }
-      &.next.left,
-      &.prev.right,
+      &.next.#{$align},
+      &.prev.#{$align-inverse},
       &.active {
-        left: 0;
+        #{$align}: 0;
         transform: translate3d(0, 0, 0);
       }
     }
@@ -52,7 +52,7 @@
   }
 
   > .active {
-    left: 0;
+    #{$align}: 0;
   }
 
   > .next,
@@ -63,34 +63,34 @@
   }
 
   > .next {
-    left: 100%;
+    #{$align}: 100%;
   }
   > .prev {
-    left: -100%;
+    #{$align}: -100%;
   }
-  > .next.left,
-  > .prev.right {
-    left: 0;
+  > .next.#{$align},
+  > .prev.#{$align-inverse} {
+    #{$align}: 0;
   }
 
-  > .active.left {
-    left: -100%;
+  > .active.#{$align} {
+    #{$align}: -100%;
   }
-  > .active.right {
-    left: 100%;
+  > .active.#{$align-inverse} {
+    #{$align}: 100%;
   }
 }
 
 
 //
-// Left/right controls for nav
+// #{$align}/#{$align-inverse} controls for nav
 //
 
 .carousel-control {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
+  #{$align}: 0;
   width: $carousel-control-width;
   font-size: $carousel-control-font-size;
   color: $carousel-control-color;
@@ -101,12 +101,12 @@
   // animation if you trip this while in the middle of another animation.
 
   // Set gradients for backgrounds
-  &.left {
+  &.#{$align} {
     @include gradient-horizontal($start-color: rgba(0,0,0,.5), $end-color: rgba(0,0,0,.0001));
   }
-  &.right {
-    right: 0;
-    left: auto;
+  &.#{$align-inverse} {
+    #{$align-inverse}: 0;
+    #{$align}: auto;
     @include gradient-horizontal($start-color: rgba(0,0,0,.0001), $end-color: rgba(0,0,0,.5));
   }
 
@@ -132,22 +132,22 @@
     line-height: 1;
   }
   .icon-prev {
-    left: 50%;
-    margin-left: -10px;
+    #{$align}: 50%;
+    margin-#{$align}: -10px;
   }
   .icon-next {
-    right: 50%;
-    margin-right: -10px;
+    #{$align-inverse}: 50%;
+    margin-#{$align-inverse}: -10px;
   }
 
   .icon-prev {
     &:before {
-      content: "\2039";// SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
+      content: "\2039";// SINGLE #{$align}-POINTING ANGLE QUOTATION MARK (U+2039)
     }
   }
   .icon-next {
     &:before {
-      content: "\203a";// SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
+      content: "\203a";// SINGLE #{$align-inverse}-POINTING ANGLE QUOTATION MARK (U+203A)
     }
   }
 }
@@ -161,11 +161,11 @@
 .carousel-indicators {
   position: absolute;
   bottom: 10px;
-  left: 50%;
+  #{$align}: 50%;
   z-index: 15;
   width: 60%;
-  padding-left: 0;
-  margin-left: -30%;
+  padding-#{$align}: 0;
+  margin-#{$align}: -30%;
   text-align: center;
   list-style: none;
 
@@ -200,9 +200,9 @@
 
 .carousel-caption {
   position: absolute;
-  right: 15%;
+  #{$align-inverse}: 15%;
   bottom: 20px;
-  left: 15%;
+  #{$align}: 15%;
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -231,17 +231,17 @@
       font-size: 30px;
     }
     .icon-prev {
-      margin-left: -15px;
+      margin-#{$align}: -15px;
     }
     .icon-next {
-      margin-right: -15px;
+      margin-#{$align-inverse}: -15px;
     }
   }
 
-  // Show and left align the captions
+  // Show and #{$align} align the captions
   .carousel-caption {
-    right: 20%;
-    left: 20%;
+    #{$align-inverse}: 20%;
+    #{$align}: 20%;
     padding-bottom: 30px;
   }
 

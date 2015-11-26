@@ -1,5 +1,5 @@
 .pager {
-  padding-left: 0;
+  padding-#{$align}: 0;
   margin-top: $spacer-y;
   margin-bottom: $spacer-y;
   text-align: center;
@@ -45,13 +45,13 @@
 .pager-next {
   > a,
   > span {
-    float: right;
+    float: #{$align-inverse};
   }
 }
 
 .pager-prev {
   > a,
   > span {
-    float: left;
+    float: #{$align};
   }
 }

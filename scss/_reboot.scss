@@ -132,7 +132,7 @@ dt {
 
 dd {
   margin-bottom: .5rem;
-  margin-left: 0; // Undo browser default
+  margin-#{$align}: 0; // Undo browser default
 }
 
 blockquote {
@@ -219,13 +219,13 @@ caption {
   padding-top: $table-cell-padding;
   padding-bottom: $table-cell-padding;
   color: $text-muted;
-  text-align: left;
+  text-align: #{$align};
   caption-side: bottom;
 }
 
 th {
-  // Centered by default, but left-align-ed to match the `td`s below.
-  text-align: left;
+  // Centered by default, but #{$align}-align-ed to match the `td`s below.
+  text-align: #{$align};
 }
 
 

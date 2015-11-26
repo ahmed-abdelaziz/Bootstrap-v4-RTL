@@ -150,7 +150,7 @@
 
 .table-reflow {
   thead {
-    float: left;
+    float: #{$align};
   }
 
   tbody {
@@ -161,10 +161,10 @@
   th,
   td {
     border-top: 1px solid $table-border-color;
-    border-left: 1px solid $table-border-color;
+    border-#{$align}: 1px solid $table-border-color;
 
     &:last-child {
-      border-right: 1px solid $table-border-color;
+      border-#{$align-inverse}: 1px solid $table-border-color;
     }
   }
 
@@ -182,7 +182,7 @@
   }
 
   tr {
-    float: left;
+    float: #{$align};
 
     th,
     td {

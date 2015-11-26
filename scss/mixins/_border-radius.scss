@@ -2,20 +2,20 @@
 
 @mixin border-top-radius($radius) {
   border-top-right-radius: $radius;
-   border-top-left-radius: $radius;
+   border-top-#{$align}-radius: $radius;
 }
 
 @mixin border-right-radius($radius) {
-  border-bottom-right-radius: $radius;
-     border-top-right-radius: $radius;
+  border-bottom-#{$align-inverse}-radius: $radius;
+     border-top-#{$align-inverse}-radius: $radius;
 }
 
 @mixin border-bottom-radius($radius) {
-  border-bottom-right-radius: $radius;
-   border-bottom-left-radius: $radius;
+  border-bottom-#{$align-inverse}-radius: $radius;
+   border-bottom-#{$align}-radius: $radius;
 }
 
 @mixin border-left-radius($radius) {
-  border-bottom-left-radius: $radius;
-     border-top-left-radius: $radius;
+  border-bottom-#{$align}-radius: $radius;
+     border-top-#{$align}-radius: $radius;
 }

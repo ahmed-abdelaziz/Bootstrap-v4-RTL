@@ -1,0 +1,18 @@
+//
+// Fonts
+//
+
+@if $enable-RTL {
+  @include add-font("../fonts/", "GESSTwo/GESSTwoLight", "GESSTwoLight");
+  @include add-font("../fonts/", "GESSTwo/GESSTwoMedium", "GESSTwoMedium");
+
+  $primary-font: 'GESSTwoLight';
+  $secondary-font: 'GESSTwoMedium';
+}
+@else{
+  @include add-font("../fonts/","parisine/parisineplusptf-bold","parisineplusptf-bold");
+  @include add-font("../fonts/","parisine/parisineplusptfcl-bold","parisineplusptfcl-bold");
+
+  $primary-font: 'parisineplusptfcl-bold';
+  $secondary-font: 'parisineplusptf-bold';
+}

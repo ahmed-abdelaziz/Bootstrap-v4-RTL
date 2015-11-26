@@ -129,8 +129,8 @@
 
   &.form-control-sm,
   &.form-control-lg {
-    padding-right: 0;
-    padding-left: 0;
+    padding-#{$align-inverse}: 0;
+    padding-#{$align}: 0;
   }
 }
 
@@ -182,7 +182,7 @@
   margin-bottom: ($spacer * .75);
 
   label {
-    padding-left: 1.25rem;
+    padding-#{$align}: 1.25rem;
     margin-bottom: 0;
     font-weight: normal;
     cursor: pointer;
@@ -200,7 +200,7 @@
   position: absolute;
   margin-top: .25rem;
   // margin-top: 4px \9;
-  margin-left: -1.25rem;
+  margin-#{$align}: -1.25rem;
 }
 
 .radio + .radio,
@@ -214,7 +214,7 @@
 .checkbox-inline {
   position: relative;
   display: inline-block;
-  padding-left: 1.25rem;
+  padding-#{$align}: 1.25rem;
   margin-bottom: 0;
   font-weight: normal;
   vertical-align: middle;
@@ -223,7 +223,7 @@
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
   margin-top: 0;
-  margin-left: .75rem;
+  margin-#{$align}: .75rem;
 }
 
 // Apply same disabled cursor tweak as for inputs
@@ -265,8 +265,8 @@ input[type="checkbox"] {
 .form-control-success,
 .form-control-warning,
 .form-control-error {
-  padding-right: ($input-padding-x * 3);
-  background-position: center right ($input-height * .25);
+  padding-#{$align-inverse}: ($input-padding-x * 3);
+  background-position: center #{$align-inverse} ($input-height * .25);
   background-size: ($input-height * .65) ($input-height * .65);
   background-repeat: no-repeat;
 }
@@ -321,14 +321,14 @@ input[type="checkbox"] {
 //
 //   // Ensure icons don't overlap text
 //   .form-control {
-//     padding-right: ($input-height * 1.25);
+//     padding-#{$align-inverse}: ($input-height * 1.25);
 //   }
 // }
 // // Feedback icon
 // .form-control-feedback {
 //   position: absolute;
 //   top: 0;
-//   right: 0;
+//   #{$align-inverse}: 0;
 //   z-index: 2; // Ensure icon is above input groups
 //   display: block;
 //   width: $input-height;
@@ -440,13 +440,13 @@ input[type="checkbox"] {
       vertical-align: middle;
 
       label {
-        padding-left: 0;
+        padding-#{$align}: 0;
       }
     }
     .radio input[type="radio"],
     .checkbox input[type="checkbox"] {
       position: relative;
-      margin-left: 0;
+      margin-#{$align}: 0;
     }
 
     // Re-override the feedback icon.

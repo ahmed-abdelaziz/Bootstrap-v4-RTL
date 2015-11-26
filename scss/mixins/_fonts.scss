@@ -1,0 +1,19 @@
+
+//
+// Fonts
+// --------------------------------------------------
+
+@mixin add-font($folder-path,$font-path,$font-name,$font-weight:"normal",$font-style:"normal",$font-stretch:"normal",$unicode-range:"") {
+  @font-face {
+    font-family: '#{$font-name}';
+    src: url('#{$folder-path}#{$font-path}.eot');
+    src: url('#{$folder-path}#{$font-path}.eot?#iefix') format('embedded-opentype'),
+    url('#{$folder-path}#{$font-path}.svg##{$font-name}') format('svg'),
+    url('#{$folder-path}#{$font-path}.woff') format('woff'),
+    url('##{$folder-path}#{$font-path}.ttf') format('truetype');
+    font-style:$font-style;
+    font-weight:$font-weight;
+    font-stretch:$font-stretch;
+    unicode-range:$unicode-range;
+  }
+}

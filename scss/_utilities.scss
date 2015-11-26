@@ -10,11 +10,11 @@
   @include center-block();
 }
 
-.pull-right {
+.pull-#{$align-inverse} {
   @include pull-right();
 }
 
-.pull-left {
+.pull-#{$align} {
   @include pull-left();
 }
 
@@ -51,8 +51,8 @@
 
 // Alignment
 
-.text-left           { text-align: left; }
-.text-right          { text-align: right; }
+.text-#{$align}           { text-align: #{$align}; }
+.text-#{$align-inverse}          { text-align: #{$align-inverse}; }
 .text-center         { text-align: center; }
 .text-justify        { text-align: justify; }
 .text-nowrap         { white-space: nowrap; }
@@ -60,31 +60,31 @@
 
 // Responsive alignment
 
-.text-xs-left   { text-align: left; }
-.text-xs-right  { text-align: right; }
+.text-xs-#{$align}   { text-align: #{$align}; }
+.text-xs-#{$align-inverse}  { text-align: #{$align-inverse}; }
 .text-xs-center { text-align: center; }
 
 @include media-breakpoint-up(sm) {
-  .text-sm-left   { text-align: left; }
-  .text-sm-right  { text-align: right; }
+  .text-sm-#{$align}   { text-align: #{$align}; }
+  .text-sm-#{$align-inverse}  { text-align: #{$align-inverse}; }
   .text-sm-center { text-align: center; }
 }
 
 @include media-breakpoint-up(md) {
-  .text-md-left   { text-align: left; }
-  .text-md-right  { text-align: right; }
+  .text-md-#{$align}   { text-align: #{$align}; }
+  .text-md-#{$align-inverse}  { text-align: #{$align-inverse}; }
   .text-md-center { text-align: center; }
 }
 
 @include media-breakpoint-up(lg) {
-  .text-lg-left   { text-align: left; }
-  .text-lg-right  { text-align: right; }
+  .text-lg-#{$align}   { text-align: #{$align}; }
+  .text-lg-#{$align-inverse}  { text-align: #{$align-inverse}; }
   .text-lg-center { text-align: center; }
 }
 
 @include media-breakpoint-up(xl) {
-  .text-xl-left   { text-align: left; }
-  .text-xl-right  { text-align: right; }
+  .text-xl-#{$align}   { text-align: #{$align}; }
+  .text-xl-#{$align-inverse}  { text-align: #{$align-inverse}; }
   .text-xl-center { text-align: center; }
 }
 
